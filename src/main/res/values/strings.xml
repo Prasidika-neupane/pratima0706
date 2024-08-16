@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AKPPS</string>
+    <string name="navigation_drawer_open">nav</string>
+    <string name="navigation_drawer_close">nav</string>
+    <string name="app_version">AKPPS1</string>
+    <string name="edit_expense">Edit Expense</string>
+    <string name="expense_list">Expense List</string>
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
+    <string-array name="expenseNames">expenseNames</string-array>
+    <string-array name="expenseAmounts">expenseAmounts</string-array>
+</resources>

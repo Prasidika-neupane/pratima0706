@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:importantForAccessibility="yes"
+    tools:context=".SettingsActivity">
+
+    <!-- Main Content -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#2E5DBA"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:title="Settings"
+        app:titleTextColor="@android:color/white" />
+
+
+        <!-- Name Preferenance -->
+
+        <TextView
+            android:id="@+id/nameChangeView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Change Your Name"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:layout_below="@id/toolbar" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your name"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:layout_below="@id/nameChangeView"/>
+
+        <!-- Currency Selection -->
+        <Button
+            android:id="@+id/saveChangesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameEditText"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="-7dp"
+            android:padding="16dp"
+            android:text="Save Changes"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textCurrency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Currency"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:layout_below="@id/saveChangesButton" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupCurrency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textCurrency"
+            android:orientation="horizontal"
+            android:textAlignment="center">
+
+            <RadioButton
+                android:id="@+id/radioButtonAUD"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="AUD" />
+
+            <RadioButton
+                android:id="@+id/radioButtonUSD"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="USD" />
+
+            <RadioButton
+                android:id="@+id/radioButtonNPR"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="NPR" />
+
+            <RadioButton
+                android:id="@+id/radioButtonINR"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="INR" />
+
+        </RadioGroup>
+
+
+
+
+        <!-- Notification Settings -->
+    <TextView
+        android:id="@+id/textNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notification Settings"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:layout_below="@id/radioGroupCurrency" />
+
+    <Switch
+        android:id="@+id/switchNotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enable Notifications"
+        android:layout_below="@id/textNotification"
+        android:padding="16dp" />
+
+    <!-- About -->
+    <TextView
+        android:id="@+id/textAbout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:layout_below="@id/switchNotifications" />
+
+    <TextView
+        android:id="@+id/textAppVersion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="App Version: AKPPS1.0"
+        android:padding="16dp"
+        android:layout_below="@id/textAbout" />
+
+        <TextView
+            android:id="@+id/textContactInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact Number: 0400 000 000"
+            android:padding="16dp"
+            android:layout_below="@id/textAppVersion" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/white"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Drawer Header -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="#2E5DBA">
+
+                <ImageView
+                    android:id="@+id/drawerHeaderImageView"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/user"
+                    />
+
+                <TextView
+                    android:id="@+id/drawerHeaderNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_toEndOf="@id/drawerHeaderImageView"
+                    android:text="User Name"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+            <!-- Navigation Buttons -->
+            <Button
+                android:id="@+id/navHome"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:text="Home"
+                android:textSize="16sp"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/navAddExp"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:text="Add Expense"
+                android:textSize="16sp"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/navExpList"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:text="Expense List"
+                android:textSize="16sp"
+                android:textColor="@color/black" />
+
+
+
+            <Button
+                android:id="@+id/navSetting"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:text="Settings"
+                android:textSize="16sp"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>
